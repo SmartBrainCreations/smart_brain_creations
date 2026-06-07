@@ -1,0 +1,167 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-mist: var(--primary-mist);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card-purple: var(--card-purple);
+  --color-card-gold: var(--card-gold);
+  --color-card-blue: var(--card-blue);
+  --color-card-green: var(--card-green);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.04 295);
+
+  --primary: oklch(0.45 0.18 295);          /* deep purple */
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-deep: oklch(0.32 0.18 295);     /* footer / navbar */
+  --primary-soft: oklch(0.88 0.06 305);     /* lavender */
+  --primary-mist: oklch(0.96 0.025 305);    /* very light purple bg */
+
+  --gold: oklch(0.82 0.16 75);              /* warm gold/orange highlight */
+  --gold-foreground: oklch(0.22 0.04 295);
+
+  --secondary: oklch(0.96 0.02 305);
+  --secondary-foreground: oklch(0.32 0.18 295);
+  --muted: oklch(0.96 0.01 295);
+  --muted-foreground: oklch(0.48 0.04 295);
+  --accent: oklch(0.94 0.04 305);
+  --accent-foreground: oklch(0.32 0.18 295);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 295);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 295);
+
+  --card-purple: oklch(0.92 0.05 305);
+  --card-gold: oklch(0.93 0.08 85);
+  --card-blue: oklch(0.93 0.05 240);
+  --card-green: oklch(0.92 0.07 150);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.02 295);
+  --input: oklch(0.92 0.02 295);
+  --ring: oklch(0.45 0.18 295);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.18 295 / 0.78), oklch(0.45 0.18 295 / 0.62));
+  --gradient-soft: linear-gradient(180deg, oklch(0.96 0.025 305), oklch(0.99 0.01 305));
+  --shadow-blob: 0 30px 80px -20px oklch(0.32 0.18 295 / 0.35);
+  --shadow-card: 0 12px 30px -12px oklch(0.32 0.18 295 / 0.18);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .text-gold { color: var(--color-gold); }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--color-primary); color: var(--color-primary-foreground);
+    padding: 0.85rem 1.5rem; border-radius: 9999px; font-weight: 600;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow: 0 10px 24px -10px oklch(0.32 0.18 295 / 0.55);
+  }
+  .btn-primary:hover { background: var(--color-primary-deep); transform: translateY(-1px); }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--color-gold); color: var(--color-gold-foreground);
+    padding: 0.85rem 1.5rem; border-radius: 9999px; font-weight: 700;
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 10px 24px -10px oklch(0.82 0.16 75 / 0.6);
+  }
+  .btn-gold:hover { transform: translateY(-1px); }
+  .btn-ghost-white {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: oklch(1 0 0 / 0.12); color: white; backdrop-filter: blur(6px);
+    border: 1px solid oklch(1 0 0 / 0.4);
+    padding: 0.8rem 1.4rem; border-radius: 9999px; font-weight: 600;
+    transition: background .2s ease;
+  }
+  .btn-ghost-white:hover { background: oklch(1 0 0 / 0.22); }
+
+  /* Organic blob image mask */
+  .blob {
+    -webkit-mask-image: radial-gradient(closest-side, #000 99%, transparent 100%);
+    border-radius: 64% 36% 58% 42% / 48% 56% 44% 52%;
+    box-shadow: var(--shadow-blob);
+    overflow: hidden;
+  }
+  .blob-2 { border-radius: 42% 58% 46% 54% / 56% 44% 56% 44%; }
+  .blob-3 { border-radius: 58% 42% 38% 62% / 42% 62% 38% 58%; }
+
+  /* Wave bottom divider for hero */
+  .wave-bottom {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path fill='black' d='M0,80 Q360,140 720,120 T1440,80 L1440,200 L0,200 Z'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path fill='black' d='M0,80 Q360,140 720,120 T1440,80 L1440,200 L0,200 Z'/></svg>");
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  }
+
+  .section { padding: 5rem 1.5rem; }
+  .container-x { max-width: 1200px; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.75rem;
+    color: var(--color-primary); font-weight: 700;
+  }
+
+  .underline-bar {
+    display: block; width: 80px; height: 4px; border-radius: 2px;
+    background: var(--color-primary); margin: 0.75rem auto 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+

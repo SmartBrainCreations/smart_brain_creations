@@ -1,0 +1,33 @@
+# dependencies
+/node_modules
+
+# production build
+/.next
+
+
+# runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor/IDE
+.vscode
+.idea
+
+# package manager
+pnpm-lock.yaml
