@@ -315,6 +315,37 @@ ul {
   margin-top: 8px;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  :root { --inset: 16px; }
+
+  .header-bar {
+    padding: 10px var(--inset);
+    gap: 12px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .header-menu-btn {
+    display: flex;
+  }
+
+  .logo-img { height: 40px; }
+
+  .site-header .header-strip { height: 0; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 /* ── FOOTER (Figma) ── */
 .site-footer {
   position: relative;
@@ -322,6 +353,33 @@ ul {
   color: rgba(255, 255, 255, 0.85);
   padding: 100px 0 48px;
   margin-top: -1px;
+}
+
+/* ------------------ Navbar color & hover ------------------ */
+.header-nav a { color: var(--purple); transition: color .18s ease, font-weight .18s ease; }
+.header-nav a:hover, .header-nav a.is-active { color: var(--purple-dark); font-weight: 700; }
+.site-header--home .header-nav a { color: var(--purple); }
+
+/* ------------------ Card hover lift ------------------ */
+.offer-card,
+.purpose-card,
+.process-card,
+.labs-highlight-card,
+.labs-setup-copy .labs-highlight-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.offer-card:hover,
+.purpose-card:hover,
+.process-card:hover,
+.labs-highlight-card:hover,
+.labs-setup-copy .labs-highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Ensure header/menu button works and header spacing on small screens */
+@media (max-width: 768px) {
+  .header-bar { padding: 10px 16px; }
 }
 
 .footer-top-line {

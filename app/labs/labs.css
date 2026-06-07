@@ -44,6 +44,10 @@
   max-width: 760px;
 }
 
+/* Left-align hero content for labs page */
+.labs-hero-inner { text-align: left; align-items: flex-start; }
+.labs-hero-inner h1, .labs-hero-inner p { text-align: left; }
+
 .labs-hero-tag {
   display: inline-block;
   font-size: 24px;
