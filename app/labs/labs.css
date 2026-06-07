@@ -1,0 +1,251 @@
+/* Labs page — Figma node 1075:1141 */
+
+.labs-page {
+  padding-top: 0;
+}
+
+.labs-highlight-text {
+  color: var(--yellow);
+}
+
+/* ═══════════════ HERO ═══════════════ */
+.labs-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.labs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/labsimages/hero-bg.png") center / cover no-repeat;
+  z-index: 0;
+}
+
+.labs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(39, 0, 53, 0.95) 0%,
+    rgba(39, 0, 53, 0.82) 38%,
+    rgba(39, 0, 53, 0.2) 72%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.labs-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 160px 0 100px;
+  max-width: 760px;
+}
+
+.labs-hero-tag {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+.labs-hero-inner h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.labs-hero-inner > p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--white);
+  max-width: 700px;
+}
+
+/* ═══════════════ SETUP ═══════════════ */
+.labs-setup {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.labs-setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.labs-setup-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.labs-setup-copy h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--purple);
+  margin-bottom: 24px;
+}
+
+.labs-setup-copy > p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 32px;
+}
+
+.labs-highlight-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.labs-highlight-card {
+  background: var(--cta-bg);
+  border-radius: 12px;
+  padding: 20px 24px;
+  border-left: 4px solid var(--purple);
+}
+
+.labs-highlight-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.labs-highlight-card p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* ═══════════════ INCLUDED ═══════════════ */
+.labs-included {
+  padding: 80px 0 100px;
+  background: var(--white);
+}
+
+.labs-included-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--purple);
+  margin-bottom: 48px;
+}
+
+.labs-included-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.labs-included-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.labs-included-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+
+/* ═══════════════ CTA ═══════════════ */
+.labs-cta {
+  background: var(--cta-bg);
+  padding: 80px 0 100px;
+  text-align: center;
+}
+
+.labs-cta-inner h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+
+.labs-cta-inner > p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 32px;
+}
+
+.labs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  height: 48px;
+  padding: 0 32px;
+  min-width: 220px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.labs-cta-btn:hover {
+  background: var(--purple-dark);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media (max-width: 1100px) {
+  .labs-hero-inner h1 {
+    font-size: clamp(2rem, 4vw, 56px);
+  }
+
+  .labs-hero-inner > p {
+    font-size: clamp(16px, 2vw, 24px);
+  }
+
+  .labs-setup-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .labs-included-title,
+  .labs-cta-inner h2 {
+    font-size: clamp(1.75rem, 3vw, 42px);
+  }
+}
+
+@media (max-width: 640px) {
+  .labs-hero-inner {
+    padding: 130px 0 80px;
+  }
+
+  .labs-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .labs-cta-btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
