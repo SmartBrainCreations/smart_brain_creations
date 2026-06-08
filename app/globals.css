@@ -518,6 +518,9 @@ main {
   display: none;
 }
 
+/* Temporary mobile-for-desktop overrides removed to restore desktop layout */
+
+
 .footer-faq-item summary::after {
   content: '▸';
   transition: transform 0.2s ease;
