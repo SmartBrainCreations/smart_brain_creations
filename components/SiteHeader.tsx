@@ -15,7 +15,7 @@ const navLinks = [
 
 export default function SiteHeader() {
   const pathname = usePathname();
-  const heroPages = ["/", "/about", "/programs", "/labs", "/why-it-works", "/contact", "/game-dev"];
+  const heroPages = ["/", "/about", "/programs", "/labs", "/why-it-works", "/contact"];
   const onHeroPage = heroPages.includes(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -52,9 +52,6 @@ export default function SiteHeader() {
           </nav>
 
           <div className="header-actions">
-            <Link href="/game-dev" className="header-cta">
-              Game Zone
-            </Link>
             <button
               type="button"
               className="header-menu-btn"
@@ -108,13 +105,7 @@ export default function SiteHeader() {
             </li>
           ))}
         </ul>
-        <Link
-          href="/game-dev"
-          className="mobile-nav-cta"
-          onClick={() => setMenuOpen(false)}
-        >
-          Game Zone
-        </Link>
+        {/* Game Zone removed — keep mobile nav compact */}
       </nav>
     </header>
   );

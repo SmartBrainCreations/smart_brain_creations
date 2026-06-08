@@ -12,6 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_METADATA_BASE || "http://localhost:3000"),
   title: {
     default: "Smart Brain Creations",
     template: "%s | Smart Brain Creations"
@@ -64,12 +65,10 @@ export const metadata: Metadata = {
     }
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
+    icon: ["/favicon.ico", "/logo.png"],
+    shortcut: "/favicon.ico",
     apple: "/logo.png"
   }
-  ,
-  metadataBase: new URL("https://smartbraincreations.com")
 };
 
 export default function RootLayout({
