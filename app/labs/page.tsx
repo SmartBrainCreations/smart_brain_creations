@@ -44,7 +44,7 @@ export default function LabsPage() {
         <div className="container labs-hero-inner">
           <span className="labs-hero-tag">Our Labs</span>
           <h1>
-            Creative Intelligence &{" "}
+            Creative Intelligence & {" "}
             <span className="labs-highlight-text">Digital Labs</span>
           </h1>
           <p>
@@ -54,30 +54,65 @@ export default function LabsPage() {
         </div>
       </section>
 
-      <section className="labs-setup">
-        <div className="container labs-setup-grid">
-          <div className="labs-setup-image">
-            <img
-              src="/labsimages/setup.png"
-              alt="Students working in a creative technology lab"
-              width={628}
-              height={470}
-            />
+      <section className="labs-dual">
+        <div className="container">
+          <h2 className="labs-dual-title">Two Labs. One Creative Journey.</h2>
+          <div className="labs-dual-underline" />
+          <p className="labs-dual-lead">
+            At Smart Brain Creations, students learn creativity through hands-on
+            experiences and real-world digital tools. Our learning ecosystem is
+            built around two powerful environments that help students grow from
+            imaginative thinkers into confident creators.
+          </p>
+
+          <div className="labs-dual-grid">
+            <div className="lab-card lab-card-info">
+              <div className="lab-card-inner">
+                <h3>The Creative Lab</h3>
+                <p className="lab-sub">Where <strong>imagination</strong> meets its first tools.</p>
+                <p className="lab-desc">
+                  Designed for Classes 1–6, the Creative Lab helps students build
+                  foundational creative skills through hands-on activities and
+                  artistic exploration.
+                </p>
+                <ul className="lab-list">
+                  <li>Freehand drawing and sketching</li>
+                  <li>Visual storytelling and illustration</li>
+                  <li>Colour theory and composition</li>
+                  <li>Mixed-media creativity</li>
+                  <li>Clay modelling and craft design</li>
+                  <li>Beginner digital art using tablets</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="lab-card lab-card-image">
+              <img src="/homepageimages/rectangle-102.png" alt="Creative Lab classroom" />
+            </div>
           </div>
-          <div className="labs-setup-copy">
-            <h2>State-of-the-Art Setup</h2>
-            <p>
-              We design, equip, and manage a complete creative technology lab
-              inside your school. From computers to drawing tablets, software to
-              curriculum — everything is taken care of.
-            </p>
-            <div className="labs-highlight-grid">
-              {setupHighlights.map((item) => (
-                <div key={item.title} className="labs-highlight-card">
-                  <h4>{item.title}</h4>
-                  <p>{item.text}</p>
-                </div>
-              ))}
+
+          <div className="labs-dual-grid reverse">
+            <div className="lab-card lab-card-image">
+              <img src="/homepageimages/rectangle-105.png" alt="Digital Lab classroom" />
+            </div>
+            <div className="lab-card lab-card-info">
+              <div className="lab-card-inner">
+                <h3>The Digital Lab</h3>
+                <p className="lab-sub">Where <strong>ideas</strong> become real, shareable, career-relevant work.</p>
+                <p className="lab-desc">
+                  Designed for Classes 4–12, the Digital Lab introduces students
+                  to professional creative technologies and industry-standard
+                  software.
+                </p>
+                <ul className="lab-list">
+                  <li>2D &amp; 3D animations</li>
+                  <li>Game design projects</li>
+                  <li>UI/UX and web designs</li>
+                  <li>Posters, logos, and digital branding</li>
+                  <li>Websites, HTML, CSS &amp; JavaScript</li>
+                  <li>AI-powered creative projects</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

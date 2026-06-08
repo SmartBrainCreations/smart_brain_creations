@@ -134,6 +134,108 @@
   color: var(--text-body);
 }
 
+/* ═══════════════ TWO LABS SECTION (New) ═══════════════ */
+.labs-dual {
+  padding: 80px 0 100px;
+  background: var(--white);
+}
+
+.labs-dual-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+
+.labs-dual-underline {
+  width: 160px;
+  height: 8px;
+  background: var(--purple);
+  border-radius: 6px;
+  margin: 0 auto 20px;
+}
+
+.labs-dual-lead {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 40px;
+  color: var(--text-body);
+  font-size: 16px;
+}
+
+.labs-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.labs-dual-grid.reverse { direction: ltr; }
+
+.lab-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.lab-card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: var(--shadow-purple);
+}
+
+.lab-card-info {
+  background: var(--purple-light);
+  padding: 28px;
+}
+
+.lab-card-inner h3 {
+  font-size: 28px;
+  color: var(--purple-dark);
+  margin-bottom: 6px;
+}
+
+.lab-sub {
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.lab-desc {
+  color: var(--text-body);
+  margin-bottom: 18px;
+}
+
+.lab-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.lab-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-body);
+  font-weight: 600;
+}
+
+.lab-list li::before {
+  content: '\2713';
+  display: inline-block;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
 /* ═══════════════ INCLUDED ═══════════════ */
 .labs-included {
   padding: 80px 0 100px;
@@ -252,4 +354,35 @@
     width: 100%;
     min-width: unset;
   }
+
+  /* ===== Mobile: stack dual grids and make image appear above the info card ===== */
+  .labs-dual-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Put images above the info block on narrow screens for better flow */
+  .labs-dual-grid .lab-card-image {
+    order: -1;
+  }
+
+  .lab-card-info {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  /* Make the image fill width and keep good aspect */
+  .lab-card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  /* Reduce font sizes on mobile to match compact design */
+  .lab-card-inner h3 { font-size: 20px; }
+  .lab-sub { font-size: 14px; }
+  .lab-desc { font-size: 13px; }
+  .lab-list { grid-template-columns: 1fr; }
+  .lab-list li { font-size: 12px; }
 }
