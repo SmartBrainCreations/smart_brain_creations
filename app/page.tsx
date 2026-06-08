@@ -35,7 +35,7 @@ const offers = [
 const aboutItems = [
   "Creative Lab Setup inside school",
   "Industry-aligned curriculum",
-  "Handson,project-based learning",
+  "Hands-on, project-based learning",
   "Trained expert faculty"
 ];
 
@@ -77,22 +77,30 @@ const buildCards = [
   {
     label: "Game Projects",
     tone: "build-purple",
-    image: "/homepageimages/build-game.png"
+    image: "/homepageimages/build-game.png",
+    description:
+      "Students design and build interactive games while learning storytelling, logic, creativity, and problem-solving. From concept to gameplay, they experience the complete game creation process."
   },
   {
     label: "UI/UX Designs",
     tone: "build-amber",
-    image: "/homepageimages/build-uiux.png"
+    image: "/homepageimages/build-uiux.png",
+    description:
+      "Students learn how digital products are designed by creating user-facing interfaces, layouts, and interaction prototypes. They develop design thinking and visual communication skills."
   },
   {
     label: "Animations",
     tone: "build-blue",
-    image: "/homepageimages/build-anim.png"
+    image: "/homepageimages/build-anim.png",
+    description:
+      "Students bring ideas to life through motion graphics, character animation, and visual storytelling. They learn creativity, sequencing, and digital production techniques."
   },
   {
     label: "Digital Art",
     tone: "build-green",
-    image: "/homepageimages/build-art.png"
+    image: "/homepageimages/build-art.png",
+    description:
+      "Students explore creative expression using professional digital tools to create illustrations, concept art, and visual designs. They build artistic confidence and digital creativity."
   }
 ];
 
@@ -152,6 +160,39 @@ export default function Home() {
       </section>
 
       <section className="offer-section">
+      <section className="welcome-section">
+        <div className="container welcome-inner">
+          <h2 className="welcome-title">Welcome to Smart Brain Creations</h2>
+
+          <div className="welcome-grid">
+            <div className="welcome-copy">
+              <p>
+                Smart Brain Creations is a future-focused education company helping
+                schools transform traditional learning into creative, hands-on
+                experiences through our Composite Skill Lab.
+              </p>
+
+              <p>
+                Aligned with NEP 2020 and India&apos;s growing AI &amp; AVGC
+                (Animation, Visual Effects, Gaming &amp; Comics) ecosystem, we
+                empower students from Classes 1–12 with industry-relevant
+                skills in Design, Animation, Game Development, Artificial
+                Intelligence, Digital Media, and Creative Technology.
+              </p>
+
+              <p>
+                <strong>Our mission is simple:</strong>
+                <br />
+                <strong className="welcome-mission">Students don't just learn — they create.</strong>
+              </p>
+            </div>
+
+            <div className="welcome-image">
+              <img src="/homepageimages/rectangle-102.png" alt="Students in creative lab" />
+            </div>
+          </div>
+        </div>
+      </section>
         <div className="container">
           <p className="section-eyebrow">WHAT WE OFFER</p>
           <h2 className="section-title">Everything Your School Needs</h2>
@@ -255,6 +296,7 @@ export default function Home() {
                   <img src={card.image} alt={card.label} />
                 </div>
                 <p className="build-card-label">{card.label}</p>
+                <p className="build-card-desc">{card.description}</p>
               </article>
             ))}
           </div>

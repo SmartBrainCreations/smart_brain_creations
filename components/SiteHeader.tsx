@@ -10,13 +10,12 @@ const navLinks = [
   { label: "Programmes", href: "/programs" },
   { label: "Labs", href: "/labs" },
   { label: "Why It Works", href: "/why-it-works" },
-  { label: "Showcase", href: "/showcase" },
   { label: "Contact", href: "/contact" }
 ];
 
 export default function SiteHeader() {
   const pathname = usePathname();
-  const heroPages = ["/", "/about", "/programs", "/labs", "/why-it-works", "/showcase", "/contact", "/game-dev"];
+  const heroPages = ["/", "/about", "/programs", "/labs", "/why-it-works", "/contact", "/game-dev"];
   const onHeroPage = heroPages.includes(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,7 +33,7 @@ export default function SiteHeader() {
   return (
     <header className={`site-header${onHeroPage ? " site-header--home" : ""}`}>
       {onHeroPage && <div className="header-strip" aria-hidden="true" />}
-      <div className={onHeroPage ? "header-glass" : "header-solid"}>
+      <div className="header-solid">
         <div className="header-bar">
           <Link href="/" className="header-logo">
             <img src="/logo.png" alt="Smart Brain Creations" className="logo-img" />

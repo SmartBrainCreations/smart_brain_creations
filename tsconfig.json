@@ -2,11 +2,16 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
+    "app/**/*",
+    "components/**/*",
+    "next-env.d.ts",
     "vite.config.ts",
     "eslint.config.js",
     ".next/types/**/*.ts"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "target": "ES2022",
     "jsx": "preserve",
     "module": "ESNext",

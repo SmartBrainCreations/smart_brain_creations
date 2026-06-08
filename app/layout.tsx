@@ -68,6 +68,8 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png"
   }
+  ,
+  metadataBase: new URL("https://smartbraincreations.com")
 };
 
 export default function RootLayout({

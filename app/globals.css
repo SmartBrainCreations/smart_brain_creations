@@ -12,8 +12,12 @@
   --text-body: #5d5b5b;
   --text-dark: #1a0f2e;
   --white: #ffffff;
-  --max-w: 1280px;
-  --inset: 80px;
+    --max-w: 1280px;
+    /* Increase left inset to push hero copy into the left visual area */
+    --inset: 112px;
+    /* Approximate total header height (strip + bar). Increased so fixed header
+      doesn't overlap hero headings on large screens. Tweak if needed. */
+    --site-header-height: 200px;
   --radius: 8px;
   --shadow-purple: 0 14px 31.4px rgba(95, 17, 124, 0.63);
 }
@@ -55,6 +59,35 @@ ul {
 .container {
   width: min(var(--max-w), calc(100% - 32px));
   margin: 0 auto;
+}
+
+/* Push page content below the fixed header so hero headings aren't covered */
+main {
+  padding-top: var(--site-header-height);
+}
+
+/* Hero containers: keep a centered, constrained column across pages so the
+   hero content matches the site's primary layout (see screenshots). Use
+   per-page `.hero-content` widths to control inner column size. */
+.hero .container,
+.about-hero .container,
+.labs-hero .container,
+.programs-hero .container,
+.why-hero .container,
+.contact-hero-section .container,
+.game-dev-hero .container {
+  width: min(var(--max-w), calc(100% - 32px));
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: var(--max-w);
+}
+
+/* Provide a consistent left inset inside the hero inner area so headings
+   are visually aligned (matches the second screenshot). Individual pages
+   should keep `.hero-content { max-width: ... }` for readable lines. */
+.hero-inner {
+  padding-left: var(--inset);
 }
 
 /* ── HEADER (Figma: strip + glass bar) ── */
@@ -132,11 +165,11 @@ ul {
 }
 
 .site-header--home .header-menu-icon span {
-  background: var(--white);
+  background: var(--purple);
 }
 
 .site-header--home .header-nav a {
-  color: var(--white);
+  color: var(--purple);
 }
 
 .site-header--home .header-nav a.is-active {
@@ -315,6 +348,45 @@ ul {
   margin-top: 8px;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  :root { --inset: 16px; }
+
+  /* Mobile header is more compact */
+  :root { --site-header-height: 88px; }
+
+  /* Reduce the root font-size on mobile to approximately half so desktop
+     text sizes like 16/12 become roughly 8/6 on small screens. Many rules
+     still use explicit px values; this helps scale rem-based sizing. */
+  html { font-size: 50%; }
+
+  .header-bar {
+    padding: 10px var(--inset);
+    gap: 12px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .header-menu-btn {
+    display: flex;
+  }
+
+  .logo-img { height: 40px; }
+
+  .site-header .header-strip { height: 0; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 /* ── FOOTER (Figma) ── */
 .site-footer {
   position: relative;
@@ -322,6 +394,33 @@ ul {
   color: rgba(255, 255, 255, 0.85);
   padding: 100px 0 48px;
   margin-top: -1px;
+}
+
+/* ------------------ Navbar color & hover ------------------ */
+.header-nav a { color: var(--purple); transition: color .18s ease, font-weight .18s ease; }
+.header-nav a:hover, .header-nav a.is-active { color: var(--purple-dark); font-weight: 700; }
+.site-header--home .header-nav a { color: var(--purple); }
+
+/* ------------------ Card hover lift ------------------ */
+.offer-card,
+.purpose-card,
+.process-card,
+.labs-highlight-card,
+.labs-setup-copy .labs-highlight-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.offer-card:hover,
+.purpose-card:hover,
+.process-card:hover,
+.labs-highlight-card:hover,
+.labs-setup-copy .labs-highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Ensure header/menu button works and header spacing on small screens */
+@media (max-width: 768px) {
+  .header-bar { padding: 10px 16px; }
 }
 
 .footer-top-line {

@@ -17,6 +17,15 @@
   color: #fff;
 }
 
+/* Ensure hero content is not hidden beneath the fixed header */
+@media (min-width: 769px) {
+  .contact-hero-section { padding-top: 180px; }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-section { padding-top: 220px; }
+}
+
 .hero-content {
   max-width: 800px;
 }
