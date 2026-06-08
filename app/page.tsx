@@ -183,7 +183,7 @@ export default function Home() {
               <p>
                 <strong>Our mission is simple:</strong>
                 <br />
-                <strong className="welcome-mission">Students don't just learn — they create.</strong>
+                <strong className="welcome-mission">Students don&apos;t just learn — they create.</strong>
               </p>
             </div>
 
