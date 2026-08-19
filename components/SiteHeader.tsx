@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Programmes", href: "/programs" },
   { label: "Labs", href: "/labs" },
   { label: "Why It Works", href: "/why-it-works" },
+  { label: "Skills", href: "https://sbcskills.smartbraincreation.com/" },
   { label: "Game Zone", href: "https://game-zone.smartbraincreation.com/" },
   { label: "Contact", href: "/contact" }
 ];
