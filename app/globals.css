@@ -34,6 +34,40 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Shared entrance motion for sections and repeated content across routes. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main section .scroll-reveal:nth-child(2),
+main section .scroll-reveal:nth-child(2n) {
+  transition-delay: 80ms;
+}
+
+main section .scroll-reveal:nth-child(3n) {
+  transition-delay: 160ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 body {
   font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
   color: var(--text-dark);

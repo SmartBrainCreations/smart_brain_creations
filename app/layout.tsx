@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -78,7 +79,9 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body>
         <SiteHeader />
-        <main>{children}</main>
+        <main>
+          <ScrollReveal>{children}</ScrollReveal>
+        </main>
         <SiteFooter />
       </body>
     </html>
